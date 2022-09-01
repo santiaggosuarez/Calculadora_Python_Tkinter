@@ -2,10 +2,12 @@ from tkinter import *
 
 ventana = Tk()
 ventana.title("Calculadora")
+ventana.config(bg="#C3E3D9")
+ventana.iconphoto(True, PhotoImage(file = "media/icono.png"))
 
 i = 0
 #Entrada
-e_texto = Entry(ventana, font=("Arial 20"))
+e_texto = Entry(ventana, font=("Arial 20"), bg="#E3F0EC")
 e_texto.grid(row=0, column=0, columnspan=4, padx=5, pady=5)
 
 #funciones
@@ -26,31 +28,34 @@ def hacer_operaciones():
     i = 0
 
 #Botones
+color_numeros = "#ADE2D2" 
+color_operaciones = "#ADD8E2"
+color_borrar = "#E2ADD8"
+color_resultado = "#D2ADE2"
 
-boton1 = Button(ventana, text="1", width=5, height=2, command = lambda:click_boton(1))
-boton2 = Button(ventana, text="2", width=5, height=2, command = lambda:click_boton(2))
-boton3 = Button(ventana, text="3", width=5, height=2, command = lambda:click_boton(3))
-boton4 = Button(ventana, text="4", width=5, height=2, command = lambda:click_boton(4))
-boton5 = Button(ventana, text="5", width=5, height=2, command = lambda:click_boton(5))
-boton6 = Button(ventana, text="6", width=5, height=2, command = lambda:click_boton(6))
-boton7 = Button(ventana, text="7", width=5, height=2, command = lambda:click_boton(7))
-boton8 = Button(ventana, text="8", width=5, height=2, command = lambda:click_boton(8))
-boton9 = Button(ventana, text="9", width=5, height=2, command = lambda:click_boton(9))
-boton0 = Button(ventana, text="0", width=13, height=2, command = lambda:click_boton(0))
+boton1 = Button(ventana, text="1", width=5, height=2, command = lambda:click_boton(1), activebackground="#999", bg=color_numeros)
+boton2 = Button(ventana, text="2", width=5, height=2, command = lambda:click_boton(2), activebackground="#999", bg=color_numeros)
+boton3 = Button(ventana, text="3", width=5, height=2, command = lambda:click_boton(3), activebackground="#999", bg=color_numeros)
+boton4 = Button(ventana, text="4", width=5, height=2, command = lambda:click_boton(4), activebackground="#999", bg=color_numeros)
+boton5 = Button(ventana, text="5", width=5, height=2, command = lambda:click_boton(5), activebackground="#999", bg=color_numeros)
+boton6 = Button(ventana, text="6", width=5, height=2, command = lambda:click_boton(6), activebackground="#999", bg=color_numeros)
+boton7 = Button(ventana, text="7", width=5, height=2, command = lambda:click_boton(7), activebackground="#999", bg=color_numeros)
+boton8 = Button(ventana, text="8", width=5, height=2, command = lambda:click_boton(8), activebackground="#999", bg=color_numeros)
+boton9 = Button(ventana, text="9", width=5, height=2, command = lambda:click_boton(9), activebackground="#999", bg=color_numeros)
+boton0 = Button(ventana, text="0", width=15, height=2, command = lambda:click_boton(0), activebackground="#999", bg=color_numeros)
 
-boton_borrar = Button(ventana, text="AC", width=5, height=2, command = lambda: borrar())
-boton_parentisis1 = Button(ventana, text="(", width=5, height=2, command = lambda:click_boton("("))
-boton_parentisis2 = Button(ventana, text=")", width=5, height=2, command = lambda:click_boton(")"))
-boton_punto = Button(ventana, text=".", width=5, height=2, command = lambda:click_boton("."))
+boton_borrar = Button(ventana, text="AC", width=5, height=2, command = lambda: borrar(), activebackground="#999", bg=color_borrar)
+boton_parentisis1 = Button(ventana, text="(", width=5, height=2, command = lambda:click_boton("("), activebackground="#999", bg=color_operaciones)
+boton_parentisis2 = Button(ventana, text=")", width=5, height=2, command = lambda:click_boton(")"), activebackground="#999", bg=color_operaciones)
+boton_punto = Button(ventana, text=".", width=5, height=2, command = lambda:click_boton("."), activebackground="#999", bg=color_operaciones)
+boton_division = Button(ventana, text="/", width=5, height=2, command = lambda:click_boton("/"), activebackground="#999", bg=color_operaciones)
+boton_multiplicacion = Button(ventana, text="x", width=5, height=2, command = lambda:click_boton("*"), activebackground="#999", bg=color_operaciones)
+boton_suma = Button(ventana, text="+", width=5, height=2, command = lambda:click_boton("+"), activebackground="#999", bg=color_operaciones)
+boton_resta = Button(ventana, text="-", width=5, height=2, command = lambda:click_boton("-"), activebackground="#999", bg=color_operaciones)
 
-boton_division = Button(ventana, text="/", width=5, height=2, command = lambda:click_boton("/"))
-boton_multiplicacion = Button(ventana, text="x", width=5, height=2, command = lambda:click_boton("*"))
-boton_suma = Button(ventana, text="+", width=5, height=2, command = lambda:click_boton("+"))
-boton_resta = Button(ventana, text="-", width=5, height=2, command = lambda:click_boton("-"))
-boton_igual = Button(ventana, text="=", width=5, height=2, command = lambda:hacer_operaciones())
+boton_igual = Button(ventana, text="=", width=5, height=2, command = lambda:hacer_operaciones(), activebackground="#999", bg=color_resultado)
 
 #agregar botones en pantalla.
-
 boton_borrar.grid(row=1, column=0, padx=5, pady=5)
 boton_parentisis1.grid(row=1, column=1, padx=5, pady=5)
 boton_parentisis2.grid(row=1, column=2, padx=5, pady=5)
